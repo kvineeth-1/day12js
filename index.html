@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p style="color: cadetblue;"> innerText - It will returns all the text contained by an element and all its child elements.</p>
+     <p style="color: cadetblue;">   innerHTML - It will returns all the text including html tags and that is contained by an element.</p>
+     <span>On clicking we are displaying text</span>
+    <h1></h1>
+    <button onclick="clickMe()">Click1</button>
+
+    <h2 id="one">Replacing the text</h2>
+    <button onclick="clickMe2()">Click2</button>
+
+    <h3 id="two">Text Hiding</h3>
+    <button onclick="clickMe3()">Click3</button>
+    <p style="color: violet;">For giving class or id while creating new element we use setAttributes and to display 
+    the element on screen after creation we use appendChild property.</p>
+    
+
+    <span style="color: brown;">Creating a new element and displaying a new element on screen</span>
+    <h4 id="parent"></h4>
+    <button onclick="clickMe4()">Click4</button>
+
+
+
+</body>
+<script>
+    function clickMe(){
+        const text = document.getElementsByTagName("h1");
+        text[0].innerText="Welcome";
+        text[0].style.color = "red";
+    }
+
+    function clickMe2(){
+        const element = document.getElementById("one");
+        element.innerText="Text has been replaced"
+        element.style.color = "orange";
+    }
+
+    function clickMe3(){
+        const element = document.getElementById("two");
+        element.style.display="none"
+    }
+
+    function clickMe4(){
+        //creating a new element
+        const element = document.createElement("h5")
+        element.setAttribute("id", "four");
+        element.innerText = "Creating a new element";
+        element.style.color = "#E9EEEB"
+        console.log(element);
+        //displaying a new element
+
+        const parent = document.getElementById("parent");
+        parent.appendChild(element);
+
+
+
+    }
+</script>
+</html>
